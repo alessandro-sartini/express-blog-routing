@@ -1,3 +1,6 @@
+
+
+
 const express = require('express');
 const router = express.Router();
 
@@ -16,7 +19,6 @@ router.get('/:id', (req, res) => {
 });
 
 // store
-
 router.post('/', (res, req) => {
     
     res.send(`Creazione nuovo post`);
