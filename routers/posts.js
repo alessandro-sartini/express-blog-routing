@@ -25,5 +25,29 @@ router.post('/', (res, req) => {
 
 });
 
+// update
+
+router.put('/posts/:id', (req, res) => {
+    
+    res.send('Modifica integrale del post ' + req.params.id);
+
+})
+
+// modify
+
+router.patch('/posts/:id', (req, res) => {
+   
+   res.send('modifica parziale del post') 
+
+});
+
+// destroy
+
+router.delete('/posts/:id', (req, res) => {
+    
+    res.send('Eliminazione del post in questione');
+
+})
+
 
 
