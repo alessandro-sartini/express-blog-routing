@@ -11,10 +11,13 @@ router.get("/", (req, res) => {
 });
 
 // show
-router.get("/:id", (req, res) => {
-    // res.json(postsBool)
+router.get(`/:slug`, (req, res) => {
 
-  res.send(`post selezionato n: ${req.params.id}`);
+  // res.json(postsBool[req.params.id])
+
+  res.json(postsBool.find(e => e.slug === req.params.slug));
+  
+  // res.send(`post selezionato n: ${req.params.id}`);
 });
 
 // store
