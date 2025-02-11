@@ -1,53 +1,44 @@
-
-
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-// index
-router.get('/', (req, res) => {
-    
-    res.send('Lista di tutti i post!');
+const postsBool = require("../postsBool.js");
 
+
+// index
+router.get("/", (req, res) => {
+  res.json(postsBool)
+  // res.send("Lista di tutti i post!");
 });
 
 // show
-router.get('/:id', (req, res) => {
-    
-    res.send(`post selezionato n: ${req.params.id}`)
+router.get("/:id", (req, res) => {
+    // res.json(postsBool)
 
+  res.send(`post selezionato n: ${req.params.id}`);
 });
 
 // store
-router.post('/', (res, req) => {
-    
-    res.send(`Creazione nuovo post`);
-
+router.post("/", (req, res) => {
+  res.send(`Creazione nuovo post`);
 });
 
 // update
 
-router.put('/posts/:id', (req, res) => {
-    
-    res.send('Modifica integrale del post ' + req.params.id);
-
-})
+router.put("/:id", (req, res) => {
+  res.send("Modifica integrale del post " + req.params.id);
+});
 
 // modify
 
-router.patch('/posts/:id', (req, res) => {
-   
-   res.send('modifica parziale del post') 
-
+router.patch("/:id", (req, res) => {
+  res.send("modifica parziale del post " + req.params.id);
 });
 
 // destroy
 
-router.delete('/posts/:id', (req, res) => {
-    
-    res.send('Eliminazione del post in questione');
+router.delete("/:id", (req, res) => {
+  res.send(`Eliminazione del post in questione n: ${req.params.id}`);
 
-})
+});
 
-
-
+module.exports = router;
